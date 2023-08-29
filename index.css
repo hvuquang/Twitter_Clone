@@ -13,6 +13,10 @@ h1 {
     font-size: 20px;
 }
 
+.fa-solid {
+    color: lightgray;
+}
+
 /*========== LAYOUT ==========*/
 
 main, header {
@@ -69,7 +73,28 @@ textarea {
 }
 
 /*tweet*/
+.tweet {
+    border-top: 1px solid lightgray;
+    padding: 20px 0 0 0;
+    width: 100%;
+    margin: 15px 0;
+}
+
 .tweet-inner {
     display: flex;
+    align-items: flex-start;
     gap: 10px;
 }
+
+.tweet-details {
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    width: 160px;
+}
+
+.tweet-detail {
+    display: flex;
+    gap: 8px;
+}
+

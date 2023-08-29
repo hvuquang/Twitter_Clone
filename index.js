@@ -12,7 +12,7 @@ TWEET_BTN.addEventListener("click", function () {
 
 function getFeedHtml() {
   let feedHtml = ``;
-  for (let tweet of tweetsData) {
+  tweetsData.forEach(function(tweet) {
     console.log(tweet);
     feedHtml += `
     <div class="tweet">
@@ -22,15 +22,20 @@ function getFeedHtml() {
         <p class="handle">${tweet.handle}</p>
         <p class="tweet-text">${tweet.tweetText}</p>
         <div class="tweet-details">
-          <span class="tweet-detail">${tweet.replies.length}</span>
-          <span class="tweet-detail">${tweet.likes}</span>
-          <span class="tweet-detail">${tweet.retweets}</span>
+          <span class="tweet-detail"><i class="fa-regular fa-comment-dots"></i>${tweet.replies.length}</span>
+          <span class="tweet-detail"><i class="fa-solid fa-heart"></i>${tweet.likes}</span>
+          <span class="tweet-detail"><i class="fa-solid fa-retweet"></i>${tweet.retweets}</span>
         </div>
       </div>
     </div>
   </div>
         `;
-  }
-  FEED.innerHTML = feedHtml;
+  })
+  return feedHtml
 }
-getFeedHtml();
+
+function render() {
+  FEED.innerHTML = getFeedHtml()
+}
+
+render()
